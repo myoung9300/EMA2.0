@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "EMA2.0",
-    "slug": "EMA2.0",
+    "slug": "EMA20",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/EMADragonLogo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/Splash-app.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,16 +18,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.myoung9300.EMA20"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/EMADragonLogo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/images/EMADragonLogo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5e822198-edbe-4eab-b26a-cfa17f8f10e4"
+      }
     }
   }
 }
