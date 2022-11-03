@@ -1,39 +1,46 @@
 {
   "expo": {
     "name": "EMA2.0",
-    "slug": "EMA20",
-    "version": "1.0.0",
+    "slug": "EMA2",
+    "version": "2.2.2",
     "orientation": "portrait",
     "icon": "./assets/images/EMADragonLogo.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/Splash-app.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/9237750e-8946-4023-a87d-fd004743cc1e"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
+      "buildNumber": "2",
       "supportsTablet": true,
-      "bundleIdentifier": "com.myoung9300.EMA20"
+      "bundleIdentifier": "com.myoung9300.emaapp2"
     },
     "android": {
+      "versionCode": 22,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/EMADragonLogo.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.myoung9300.emaapp2"
     },
     "web": {
       "favicon": "./assets/images/EMADragonLogo.png"
     },
     "extra": {
       "eas": {
-        "projectId": "5e822198-edbe-4eab-b26a-cfa17f8f10e4"
+        "projectId": "9237750e-8946-4023-a87d-fd004743cc1e"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
