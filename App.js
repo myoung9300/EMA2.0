@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Platform } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -11,7 +12,7 @@ import { Amplify, Auth } from "aws-amplify";
 import awsconfig from "./src/aws-exports";
 
 import Purchases from "react-native-purchases";
-import { API_IOS_KEY, API_ANDROID_KEY } from "./src/constants";
+import { APPLE_API_KEY, GOOGLE_API_KEY } from "./components/emaPass/key";
 
 import { Nunito_800ExtraBold } from "@expo-google-fonts/nunito";
 import { PatrickHandSC_400Regular } from "@expo-google-fonts/patrick-hand-sc";
@@ -27,10 +28,14 @@ export default function App() {
     if ("alertTitle" in pushDataObject) {
       Alert.alert(pushDataObject.alertTitle, pushDataObject.alertMessage);
     }
-  }, [pushDataObject]);
+  });
   useEffect(() => {
     Purchases.setDebugLogsEnabled(true);
-    Purchases.setup(API_IOS_KEY, API_ANDROID_KEY);
+    if (Platform.OS === "ios") {
+      Purchases.configure({ apiKey: APPLE_API_KEY });
+    } else if (Platform.OS === "android") {
+      Purchases.configure({ apiKey: GOOGLE_API_KEY });
+    }
   }, []);
 
   Amplify.configure(awsconfig);

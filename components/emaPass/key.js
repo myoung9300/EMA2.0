@@ -13,4 +13,3 @@ export const GOOGLE_API_KEY = "goog_cMxoEZqXjUuLSyIsuzkrgFDUXkI";
 The entitlement ID from the RevenueCat dashboard that is active
 */
 export const ENTITLEMENT_ID = "EMA Pass";
-console.error("Modify the property to refelect your app's entitlement id");

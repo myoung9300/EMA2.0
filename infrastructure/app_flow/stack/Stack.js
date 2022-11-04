@@ -9,6 +9,7 @@ import KarateHomeWork from "../../../components/allStudents/KarateHomeworkCard";
 import Notifications from "../../../components/allStudents/Notifications/Notifications";
 
 import Subscription from "../../../components/emaPass/Subscription";
+import PaywallScreen from "../../../components/emaPass/paywallscreen";
 import EmaPass from "../../../components/emaPass/index";
 import PrivacyPolicy from "../../login_flow/SignUpScreen/PrivacyPolicy";
 import TermsOfUse from "../../login_flow/SignUpScreen/TermsOfUse";
@@ -86,6 +87,11 @@ const StackNavigation = () => {
       <HomeStack.Screen name="Push Notifications" component={Notifications} />
 
       <HomeStack.Screen name="Subscription" component={Subscription} />
+      <HomeStack.Screen
+        name="Paywall Screen"
+        options={{ headerShown: false }}
+        component={PaywallScreen}
+      />
       <HomeStack.Screen name="EMA Pass" component={EmaPass} />
       <HomeStack.Screen name="Privacy Policy" component={PrivacyPolicy} />
       <HomeStack.Screen name="Terms of Use" component={TermsOfUse} />

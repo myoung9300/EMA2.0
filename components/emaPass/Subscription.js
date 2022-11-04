@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   Text,
@@ -6,7 +7,7 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
 } from "react-native";
-import React from "react";
+
 import styles from "./styles";
 
 const Subscription = ({ navigation }) => {
@@ -17,10 +18,10 @@ const Subscription = ({ navigation }) => {
     navigation.navigate("Privacy Policy");
   };
   const onMonthlyPressed = () => {
-    navigation.navigate("EMA Pass");
+    navigation.navigate("Paywall Screen");
   };
   const onYearlyPressed = () => {
-    navigation.navigate("EMA Pass");
+    navigation.navigate("Paywall Screen");
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -52,8 +53,7 @@ const Subscription = ({ navigation }) => {
           * You can gain access to app features and premium content by
           subscribing to the plans above and making the purchase on a recurring
           basis for USD 2.99/month or USD 32.99/year. This is a subscription
-          that will automatically renew every month, year according to your
-          plan.
+          that will automatically renew every month/year according to your plan.
         </Text>
         <Text style={styles.bodyText}>
           * Payment wil be charged to either the App Store or Play Store at

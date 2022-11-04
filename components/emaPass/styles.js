@@ -48,6 +48,42 @@ const styles = StyleSheet.create({
   link: {
     color: "#fdb875",
   },
+  page: {
+    padding: 16,
+  },
+  text: {
+    color: "lightgrey",
+  },
+  headerFooterContainer: {
+    marginVertical: 10,
+  },
+  overlay: {
+    flex: 1,
+    position: "absolute",
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    opacity: 0.5,
+    backgroundColor: "black",
+  },
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 8,
+    backgroundColor: "#1a1a1a",
+    borderBottomWidth: 1,
+    borderBottomColor: "#242424",
+  },
+  title: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  terms: {
+    color: "darkgrey",
+  },
 });
 
 export default styles;
