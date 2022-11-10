@@ -49,10 +49,12 @@ const styles = StyleSheet.create({
     color: "#fdb875",
   },
   page: {
-    padding: 16,
+    flex: 1,
+    paddingTop: 40,
+    backgroundColor: "#8aff8a",
   },
   text: {
-    color: "lightgrey",
+    alignSelf: "center",
   },
   headerFooterContainer: {
     marginVertical: 10,
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    opacity: 0.5,
+    opacity: 0.2,
     backgroundColor: "black",
   },
   container: {
@@ -83,6 +85,15 @@ const styles = StyleSheet.create({
   },
   terms: {
     color: "darkgrey",
+  },
+  container2: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 8,
+    backgroundColor: "blue",
+    borderBottomWidth: 1,
+    borderBottomColor: "red",
   },
 });
 

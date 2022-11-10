@@ -12,7 +12,6 @@ import { Amplify, Auth } from "aws-amplify";
 import awsconfig from "./src/aws-exports";
 
 import Purchases from "react-native-purchases";
-import { APPLE_API_KEY, GOOGLE_API_KEY } from "./components/emaPass/key";
 
 import { Nunito_800ExtraBold } from "@expo-google-fonts/nunito";
 import { PatrickHandSC_400Regular } from "@expo-google-fonts/patrick-hand-sc";
@@ -21,6 +20,8 @@ import { useFonts } from "expo-font";
 import LoginFlow from "./infrastructure/login_flow/LoginFlow";
 
 export default function App() {
+  const APPLE_API_KEY = "appl_nKoGMTbJvrBnTdTNaFLeGJiDnYT";
+  const GOOGLE_API_KEY = "goog_cMxoEZqXjUuLSyIsuzkrgFDUXkI";
   registerNNPushToken(2348, "hqEMgzJMPWeyd0tRiFUUPl");
   let pushDataObject = getPushDataObject("");
 

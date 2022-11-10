@@ -39,7 +39,7 @@ const HomePage = ({ navigation }) => {
             APP Notifications
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("Subscription")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Paywall Screen")}>
           <Text style={styles.area}>EMA Pass</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Basic")}>

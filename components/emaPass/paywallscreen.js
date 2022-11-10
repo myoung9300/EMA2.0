@@ -1,43 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, Alert } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  Alert,
+  SafeAreaView,
+  ActivityIndicator,
+  Pressable,
+} from "react-native";
 import Purchases from "react-native-purchases";
 import { PackageItem } from "./packageItem";
 import styles from "./styles";
 
-/*
- An example paywall that uses the current offering.
- */
 const PaywallScreen = () => {
-  // - State for all available package
   const [packages, setPackages] = useState([]);
-
-  // - State for displaying an overlay view
   const [isPurchasing, setIsPurchasing] = useState(false);
-
-  useEffect(() => {
-    // Get current available packages
-    const getPackages = async () => {
-      try {
-        const offerings = await Purchases.getOfferings();
-        if (
-          offerings.current !== null &&
-          offerings.current.availablePackages.length !== 0
-        ) {
-          setPackages(offerings.current.availablePackages);
-        }
-      } catch (e) {
-        Alert.alert("Error getting offers", e.message);
+  const getPackages = async () => {
+    try {
+      const offerings = await Purchases.getOfferings();
+      if (
+        offerings.current !== null &&
+        offerings.current.availablePackages.length !== 0
+      ) {
+        setPackages(offerings.current.availablePackages);
+        console.log(offerings.current.availablePackages);
       }
-    };
-
+    } catch (e) {
+      Alert.alert("Error getting offers", e.message);
+    }
+  };
+  useEffect(() => {
     getPackages();
   }, []);
 
-  const header = () => <Text style={styles.text}>Magic Weather Premium</Text>;
+  const Header = () => <Text style={styles.headText}>Exclusive Pass!</Text>;
 
-  const footer = () => {
+  const Footer = () => {
     return (
-      <Text style={styles.text}>
+      <Text style={styles.subHeadText}>
         A $2.99 per month or $32.99 per year purchase will be applied to your
         iTunes or Google account at the end of the trial on confirmation.
         Subscriptions will automatically renew unless canceled within 24-hours
@@ -50,25 +50,29 @@ const PaywallScreen = () => {
   };
 
   return (
-    <View style={styles.page}>
-      {/* The paywall flat list displaying each package */}
-      <FlatList
-        data={packages}
-        renderItem={({ item }) => (
-          <PackageItem
-            purchasePackage={item}
-            setIsPurchasing={setIsPurchasing}
-          />
-        )}
-        keyExtractor={(item) => item.identifier}
-        ListHeaderComponent={header}
-        ListHeaderComponentStyle={styles.headerFooterContainer}
-        ListFooterComponent={footer}
-        ListFooterComponentStyle={styles.headerFooterContainer}
-      />
-
+    <SafeAreaView style={styles.page}>
+      <Header />
+      <View style={styles.break} />
+      {!packages ? (
+        <ActivityIndicator />
+      ) : (
+        packages.map((item) => (
+          <Pressable
+            style={styles.Button}
+            key={item.identifier}
+            onPress={() => {
+              setIsPurchasing(true);
+            }}
+          >
+            <Text style={styles.headText}>{item.product.priceString}</Text>
+            <Text style={styles.bodyText}>{item.packageType}</Text>
+          </Pressable>
+        ))
+      )}
+      <View style={styles.break} />
+      <Footer />
       {isPurchasing && <View style={styles.overlay} />}
-    </View>
+    </SafeAreaView>
   );
 };
 
