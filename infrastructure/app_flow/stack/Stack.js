@@ -8,26 +8,10 @@ import Itp from "../../../components/allStudents/IntentToPromote";
 import KarateHomeWork from "../../../components/allStudents/KarateHomeworkCard";
 import Notifications from "../../../components/allStudents/Notifications/Notifications";
 
-import PaywallScreen from "../../../components/emaPass/paywallscreen";
-import EmaPass from "../../../components/emaPass/index";
+import PassNavigator from "../../../components/emaPass";
+
 import PrivacyPolicy from "../../login_flow/SignUpScreen/PrivacyPolicy";
 import TermsOfUse from "../../login_flow/SignUpScreen/TermsOfUse";
-import Lvl1Breakdown from "../../../components/emaPass/Lvl1Breakdown";
-import Lvl2Breakdown from "../../../components/emaPass/Lvl2Breakdown";
-import Lvl3Breakdown from "../../../components/emaPass/Lvl3Breakdown";
-import EmaPassMon2 from "../../../components/emaPass/Mon2Breakdown";
-import EmaPassChonJi from "../../../components/emaPass/EmaPass.youtube/EmaPass.Chonji";
-import EmaPassTanGun from "../../../components/emaPass/EmaPass.youtube/EmaPass.TanGun";
-import EmaPassToSan from "../../../components/emaPass/EmaPass.youtube/EmaPass.ToSan";
-import EmaPassWonHyo from "../../../components/emaPass/EmaPass.youtube/EmaPass.WonHyo";
-import EmaPassYulGok from "../../../components/emaPass/EmaPass.youtube/EmaPass.YulGok";
-import EmaPassChungGun from "../../../components/emaPass/EmaPass.youtube/EmaPass.ChungGun";
-import EmaPassToiGye from "../../../components/emaPass/EmaPass.youtube/EmaPass.ToiGye";
-import EmaPassHwaRang from "../../../components/emaPass/EmaPass.youtube/EmaPass.HwaRang";
-import EmaPassPoEun from "../../../components/emaPass/EmaPass.youtube/EmaPass.PoEun";
-import EmaPassGyeBek from "../../../components/emaPass/EmaPass.youtube/EmaPass.GyeBek";
-import EmaPassExodus from "../../../components/emaPass/EmaPass.youtube/EmaPass.Exodus";
-import EmaPassChungMu from "../../../components/emaPass/EmaPass.youtube/EmaPass.ChungMu";
 
 import BasicHomeScreen from "../../../components/basic";
 import BasicPlayer from "../../../components/basic/Basic.Player";
@@ -65,6 +49,7 @@ const StackNavigation = () => {
   return (
     <HomeStack.Navigator
       screenOptions={{
+        headerTitleStyle: { fontSize: 20, fontFamily: "Nunito_800ExtraBold" },
         headerTintColor: "white",
         headerStyle: {
           backgroundColor: "#0045b5",
@@ -86,29 +71,12 @@ const StackNavigation = () => {
       <HomeStack.Screen name="Push Notifications" component={Notifications} />
 
       <HomeStack.Screen
-        name="Paywall Screen"
+        name="EMA Pass Navigator"
         options={{ headerShown: false }}
-        component={PaywallScreen}
+        component={PassNavigator}
       />
-      <HomeStack.Screen name="EMA Pass" component={EmaPass} />
       <HomeStack.Screen name="Privacy Policy" component={PrivacyPolicy} />
       <HomeStack.Screen name="Terms of Use" component={TermsOfUse} />
-      <HomeStack.Screen name="Level 1 Breakdowns" component={Lvl1Breakdown} />
-      <HomeStack.Screen name="Level 2 Breakdowns" component={Lvl2Breakdown} />
-      <HomeStack.Screen name="Level 3 Breakdowns" component={Lvl3Breakdown} />
-      <HomeStack.Screen name="Month 2 Breakdowns" component={EmaPassMon2} />
-      <HomeStack.Screen name="Ema Pass Chon Ji" component={EmaPassChonJi} />
-      <HomeStack.Screen name="Ema Pass Tan Gun" component={EmaPassTanGun} />
-      <HomeStack.Screen name="Ema Pass To San" component={EmaPassToSan} />
-      <HomeStack.Screen name="Ema Pass Won Hyo" component={EmaPassWonHyo} />
-      <HomeStack.Screen name="Ema Pass Yul Gok" component={EmaPassYulGok} />
-      <HomeStack.Screen name="Ema Pass Chung Gun" component={EmaPassChungGun} />
-      <HomeStack.Screen name="Ema Pass Toi Gye" component={EmaPassToiGye} />
-      <HomeStack.Screen name="Ema Pass Hwa Rang" component={EmaPassHwaRang} />
-      <HomeStack.Screen name="Ema Pass Po Eun" component={EmaPassPoEun} />
-      <HomeStack.Screen name="Ema Pass Gye Bek" component={EmaPassGyeBek} />
-      <HomeStack.Screen name="Ema Pass Exodus" component={EmaPassExodus} />
-      <HomeStack.Screen name="Ema Pass Chung Mu" component={EmaPassChungMu} />
 
       <HomeStack.Screen name="Basic" component={BasicHomeScreen} />
       <HomeStack.Screen name="Basic Player" component={BasicPlayer} />

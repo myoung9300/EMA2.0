@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   SafeAreaView,
   Text,
@@ -39,7 +39,9 @@ const HomePage = ({ navigation }) => {
             APP Notifications
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("Paywall Screen")}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("EMA Pass Navigator")}
+        >
           <Text style={styles.area}>EMA Pass</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Basic")}>

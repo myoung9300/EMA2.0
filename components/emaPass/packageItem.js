@@ -1,22 +1,37 @@
 import React from "react";
-import { View, Text, Pressable, Alert } from "react-native";
+import { Alert, Text, TouchableOpacity } from "react-native";
 import Purchases from "react-native-purchases";
 import { useNavigation } from "@react-navigation/native";
-import { ENTITLEMENT_ID } from "../emaPass/key";
 import styles from "./styles";
 
-const PackageItem = ({ item, setIsPurchasing }) => {
+export const ENTITLEMENT_ID = "pass";
+
+const PackageItem = ({ data, setIsPurchasing }) => {
+  const navigation = useNavigation();
+  const onSelection = async () => {
+    setIsPurchasing(true);
+
+    try {
+      const { customerInfo } = await Purchases.purchasePackage(data);
+
+      if (
+        typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
+      ) {
+        navigation.navigate("EMA Pass");
+      }
+    } catch (e) {
+      if (e.PurchaseCancelledError) {
+        Alert.alert("OOPS... Something went wrong", e.message);
+      }
+    } finally {
+      setIsPurchasing(false);
+    }
+  };
   return (
-    <Pressable
-      style={styles.Button}
-      key={item.identifier}
-      onPress={() => {
-        setIsPurchasing(true);
-      }}
-    >
-      <Text style={styles.headText}>{item.product.priceString}</Text>
-      <Text style={styles.bodyText}>{item.packageType}</Text>
-    </Pressable>
+    <TouchableOpacity onPress={onSelection} style={styles.Button}>
+      <Text style={styles.headText}>{data.product.priceString}</Text>
+      <Text style={styles.bodyText}>{data.packageType}</Text>
+    </TouchableOpacity>
   );
 };
 

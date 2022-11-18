@@ -12,10 +12,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 3,
     borderColor: "black",
-    fontSize: 30,
-    fontFamily: "Nunito_800ExtraBold",
-    color: "black",
-    textAlign: "center",
   },
   bigText: {
     fontFamily: "Nunito_800ExtraBold",
@@ -40,6 +36,7 @@ const styles = StyleSheet.create({
     fontFamily: "PatrickHandSC_400Regular",
     fontSize: 16,
     paddingLeft: 10,
+    alignSelf: "center",
   },
   ruleText: {
     color: "gray",
@@ -49,8 +46,7 @@ const styles = StyleSheet.create({
     color: "#fdb875",
   },
   page: {
-    flex: 1,
-    paddingTop: 40,
+    flexGrow: 1,
     backgroundColor: "#8aff8a",
   },
   text: {
@@ -66,17 +62,8 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    opacity: 0.2,
+    opacity: 0.3,
     backgroundColor: "black",
-  },
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 8,
-    backgroundColor: "#1a1a1a",
-    borderBottomWidth: 1,
-    borderBottomColor: "#242424",
   },
   title: {
     color: "white",
@@ -85,15 +72,6 @@ const styles = StyleSheet.create({
   },
   terms: {
     color: "darkgrey",
-  },
-  container2: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 8,
-    backgroundColor: "blue",
-    borderBottomWidth: 1,
-    borderBottomColor: "red",
   },
 });
 

@@ -58,8 +58,8 @@ const SignInScreen = ({ navigation }) => {
         <Image style={styles.logo} source={EMABlue} />
         <View style={styles.break} />
         <Text style={styles.text_bold}>
-          Did you forget your username? See someone at the front counter when
-          you are in next to recover it...
+          Did you forget your username? Or, do you need to delete your username,
+          see someone at the front counter when you are in next to recover it...
         </Text>
         <View style={styles.break} />
         <CustomInput

@@ -6,18 +6,28 @@ const Lvl3Breakdown = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
+        style={styles.Button}
         onPress={() => navigation.navigate("Ema Pass Chung Mu")}
       >
-        <Text style={styles.Button}>Chung - Mu</Text>
+        <Text style={styles.headText}>Chung - Mu</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Ema Pass Po Eun")}>
-        <Text style={styles.Button}>Po - Eun</Text>
+      <TouchableOpacity
+        style={styles.Button}
+        onPress={() => navigation.navigate("Ema Pass Po Eun")}
+      >
+        <Text style={styles.headText}>Po - Eun</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Ema Pass Gye Bek")}>
-        <Text style={styles.Button}>Gye - Bek</Text>
+      <TouchableOpacity
+        style={styles.Button}
+        onPress={() => navigation.navigate("Ema Pass Gye Bek")}
+      >
+        <Text style={styles.headText}>Gye - Bek</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Ema Pass Exodus")}>
-        <Text style={styles.Button}>Exodus</Text>
+      <TouchableOpacity
+        style={styles.Button}
+        onPress={() => navigation.navigate("Ema Pass Exodus")}
+      >
+        <Text style={styles.headText}>Exodus</Text>
       </TouchableOpacity>
     </View>
   );
