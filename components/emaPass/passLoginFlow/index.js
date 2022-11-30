@@ -56,7 +56,7 @@ const PassNavigator = () => {
         },
       }}
     >
-      {rcUser == null ? (
+      {rcUser === null ? (
         <Pass.Screen
           name="Paywall Screen"
           options={{
