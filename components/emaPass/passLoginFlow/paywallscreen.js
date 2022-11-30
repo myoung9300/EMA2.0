@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, Alert, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  Alert,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import Purchases from "react-native-purchases";
 import PackageItem from "./packageItem";
-import styles from "./styles";
+import styles from "../styles";
 
-const PaywallScreen = () => {
+const PaywallScreen = ({ navigation }) => {
   const [packages, setPackages] = useState([]);
   const [isPurchasing, setIsPurchasing] = useState(false);
 
@@ -30,8 +37,11 @@ const PaywallScreen = () => {
   const footer = () => {
     return (
       <>
+        <TouchableOpacity style={styles.Button}>
+          <Text style={styles.subHeadText}>Restore Purchase...</Text>
+        </TouchableOpacity>
+        <View style={styles.break} />
         <Text style={styles.subHeadText}>Trial Period Terms</Text>
-
         <Text style={styles.bodyText}>
           Any unused portion of a free trial period, will be forfited when your
           trial is converted to a paid subscription.

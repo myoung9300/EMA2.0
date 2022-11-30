@@ -8,7 +8,7 @@ import Itp from "../../../components/allStudents/IntentToPromote";
 import KarateHomeWork from "../../../components/allStudents/KarateHomeworkCard";
 import Notifications from "../../../components/allStudents/Notifications/Notifications";
 
-import PassNavigator from "../../../components/emaPass";
+import PassNavigator from "../../../components/emaPass/passLoginFlow/index";
 
 import PrivacyPolicy from "../../login_flow/SignUpScreen/PrivacyPolicy";
 import TermsOfUse from "../../login_flow/SignUpScreen/TermsOfUse";
