@@ -56,7 +56,18 @@ const PassNavigator = () => {
         },
       }}
     >
-      {rcUser !== null ? (
+      {rcUser == null ? (
+        <Pass.Screen
+          name="Paywall Screen"
+          options={{
+            headerBackVisible: false,
+            headerStyle: {
+              backgroundColor: "#79B779",
+            },
+          }}
+          component={PaywallScreen}
+        />
+      ) : (
         <>
           <Pass.Screen
             name="EMA Pass"
@@ -213,17 +224,6 @@ const PassNavigator = () => {
             component={EmaPassChungMu}
           />
         </>
-      ) : (
-        <Pass.Screen
-          name="Paywall Screen"
-          options={{
-            headerBackVisible: false,
-            headerStyle: {
-              backgroundColor: "#79B779",
-            },
-          }}
-          component={PaywallScreen}
-        />
       )}
     </Pass.Navigator>
   );
