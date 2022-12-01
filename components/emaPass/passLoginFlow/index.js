@@ -27,7 +27,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const PassNavigator = () => {
   const Pass = createNativeStackNavigator();
-  const [rcUser, setRcUser] = useState();
+  const [rcUser, setRcUser] = useState([]);
 
   useEffect(() => {
     const checkMember = async () => {

@@ -15,6 +15,9 @@ const PackageItem = ({ data, setIsPurchasing }) => {
         typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
       ) {
         // this is where a user gets lead to the EMA Pass screen...
+        useEffect(() => {
+          PackageItem();
+        }, []);
       }
     } catch (e) {
       if (e.PurchaseCancelledError) {
