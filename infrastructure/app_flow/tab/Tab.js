@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import { ActivityIndicator, TouchableOpacity, View, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as Animatable from "react-native-animatable";
@@ -151,4 +151,4 @@ const TabNavigation = () => {
     </Tab.Navigator>
   );
 };
-export default TabNavigation;
+export default memo(TabNavigation);

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { memo } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { Alert, Text, TouchableOpacity } from "react-native";
 import Purchases from "react-native-purchases";
-import { useNavigation } from "@react-navigation/native";
 import styles from "../styles";
 
 export const ENTITLEMENT_ID = "pass";
@@ -15,9 +15,10 @@ const PackageItem = ({ data, setIsPurchasing }) => {
         typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
       ) {
         // this is where a user gets lead to the EMA Pass screen...
-        useEffect(() => {
-          PackageItem();
-        }, []);
+        Alert.alert(
+          "CONGRATS!!",
+          "Click the Home button and then click the EMA Pass button again and you will be redirected..."
+        );
       }
     } catch (e) {
       if (e.PurchaseCancelledError) {
@@ -36,4 +37,4 @@ const PackageItem = ({ data, setIsPurchasing }) => {
   );
 };
 
-export default PackageItem;
+export default memo(PackageItem);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import {
   View,
   Text,
@@ -9,26 +9,27 @@ import {
 } from "react-native";
 import Purchases from "react-native-purchases";
 import PackageItem from "./packageItem";
+import RestorePurchases from "./restorePurch";
 import styles from "../styles";
 
 const PaywallScreen = ({ navigation }) => {
   const [packages, setPackages] = useState([]);
   const [isPurchasing, setIsPurchasing] = useState(false);
 
-  const getPackages = async () => {
-    try {
-      const offerings = await Purchases.getOfferings();
-      if (
-        offerings.current !== null &&
-        offerings.current.availablePackages.length !== 0
-      ) {
-        setPackages(offerings.current.availablePackages);
-      }
-    } catch (e) {
-      Alert.alert("Error getting offers", e.message);
-    }
-  };
   useEffect(() => {
+    const getPackages = async () => {
+      try {
+        const offerings = await Purchases.getOfferings();
+        if (
+          offerings.current !== null &&
+          offerings.current.availablePackages.length !== 0
+        ) {
+          setPackages(offerings.current.availablePackages);
+        }
+      } catch (e) {
+        Alert.alert("Error getting offers", e.message);
+      }
+    };
     getPackages();
   }, []);
 
@@ -37,7 +38,10 @@ const PaywallScreen = ({ navigation }) => {
   const footer = () => {
     return (
       <>
-        <TouchableOpacity style={styles.Button}>
+        <TouchableOpacity
+          style={styles.Button}
+          onPress={() => <RestorePurchases />}
+        >
           <Text style={styles.subHeadText}>Restore Purchase...</Text>
         </TouchableOpacity>
         <View style={styles.break} />
@@ -103,4 +107,4 @@ const PaywallScreen = ({ navigation }) => {
   );
 };
 
-export default PaywallScreen;
+export default memo(PaywallScreen);

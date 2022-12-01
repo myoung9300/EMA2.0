@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { FlatList, SafeAreaView, Text, View, Image } from "react-native";
 import { Card } from "react-native-paper";
 
@@ -51,4 +51,4 @@ const InstructorPVT = ({ navigation }) => {
   );
 };
 
-export default InstructorPVT;
+export default memo(InstructorPVT);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import { SafeAreaView } from "react-native";
 import WebView from "react-native-webview";
 
@@ -16,4 +16,4 @@ const SemiPVT = () => {
   );
 };
 
-export default SemiPVT;
+export default memo(SemiPVT);
