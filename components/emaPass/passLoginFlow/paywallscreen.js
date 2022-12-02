@@ -1,15 +1,8 @@
 import React, { useEffect, useState, memo } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  Alert,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, FlatList, Alert, SafeAreaView } from "react-native";
 import Purchases from "react-native-purchases";
 import PackageItem from "./packageItem";
-import RestorePurchases from "./restorePurch";
+import RestorePurchasesButton from "./restorePurch";
 import styles from "../styles";
 
 const PaywallScreen = ({ navigation }) => {
@@ -38,12 +31,7 @@ const PaywallScreen = ({ navigation }) => {
   const footer = () => {
     return (
       <>
-        <TouchableOpacity
-          style={styles.Button}
-          onPress={() => <RestorePurchases />}
-        >
-          <Text style={styles.subHeadText}>Restore Purchase...</Text>
-        </TouchableOpacity>
+        <RestorePurchasesButton />
         <View style={styles.break} />
         <Text style={styles.subHeadText}>Trial Period Terms</Text>
         <Text style={styles.bodyText}>
