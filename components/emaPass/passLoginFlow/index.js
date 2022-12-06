@@ -35,7 +35,6 @@ const PassNavigator = () => {
         typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
       ) {
         setRcUser(true);
-        console.log("user is pro");
       }
     } catch (error) {}
   };

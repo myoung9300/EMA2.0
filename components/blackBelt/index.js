@@ -11,11 +11,6 @@ const BlackBelt = ({ navigation }) => {
         >
           <Text style={styles.area}>Black Belt Curriculum</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("2nd Degree Curriculum")}
-        >
-          <Text style={styles.area}>2nd Degree Black Belt Curriculum</Text>
-        </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("SWAT 1")}>
           <Text style={styles.area}>SWAT 1 Tasks</Text>
         </TouchableOpacity>

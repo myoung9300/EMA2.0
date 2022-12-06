@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList, SafeAreaView, Text } from "react-native";
+import { FlatList, SafeAreaView, Text } from "react-native";
 import styles from "../styles";
 
 // import { API_KEY } from '../../basic/Basic.Player';

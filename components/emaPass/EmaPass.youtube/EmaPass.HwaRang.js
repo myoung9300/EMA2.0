@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, FlatList, SafeAreaView } from "react-native";
+import { StyleSheet, FlatList, SafeAreaView } from "react-native";
 
 import { API_KEY } from "../../basic/Basic.Player";
 import MiniCard from "../../Youtube/miniCard";
+import styles from "../styles";
 
 const PlaylistKey = "PLTCcbu_9GgThKB2uxOU8P176quR-SfPxB";
 
@@ -42,12 +43,5 @@ const EmaPassHwaRang = (key) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#8aff8a",
-  },
-});
 
 export default EmaPassHwaRang;

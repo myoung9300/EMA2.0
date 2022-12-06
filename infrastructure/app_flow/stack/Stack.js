@@ -37,7 +37,6 @@ import Level3Standards from "../../../components/level3/standards";
 import Level3Checklist from "../../../components/level3/checklist";
 import BlackBelt from "../../../components/blackBelt";
 import BBPlayer from "../../../components/blackBelt/BB.Player";
-import SecondBBPlayer from "../../../components/blackBelt/SecondBB.Player";
 import BBTesting from "../../../components/blackBelt/BBTesting";
 import Swat1 from "../../../components/blackBelt/swat1";
 
@@ -103,10 +102,6 @@ const StackNavigation = () => {
 
       <HomeStack.Screen name="Black Belt" component={BlackBelt} />
       <HomeStack.Screen name="Black Belt Curriculum" component={BBPlayer} />
-      <HomeStack.Screen
-        name="2nd Degree Curriculum"
-        component={SecondBBPlayer}
-      />
       <HomeStack.Screen name="Black Belt Testing" component={BBTesting} />
       <HomeStack.Screen name="SWAT 1" component={Swat1} />
 

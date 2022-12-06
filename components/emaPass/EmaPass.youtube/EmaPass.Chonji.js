@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, FlatList, SafeAreaView } from "react-native";
+import { FlatList, SafeAreaView } from "react-native";
 
 import { API_KEY } from "../../basic/Basic.Player";
 import MiniCard from "../../Youtube/miniCard";

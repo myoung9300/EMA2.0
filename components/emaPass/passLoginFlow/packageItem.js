@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import { useNavigation } from "@react-navigation/native";
 import { Alert, Text, TouchableOpacity } from "react-native";
 import Purchases from "react-native-purchases";
 import styles from "../styles";

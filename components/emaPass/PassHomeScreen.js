@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
-import Purchases from "react-native-purchases";
-import { ENTITLEMENT_ID } from "./passLoginFlow/packageItem";
 import styles from "./styles";
 
 const EmaPassHome = ({ navigation }) => {
