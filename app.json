@@ -2,7 +2,7 @@
   "expo": {
     "name": "EMA2.0",
     "slug": "EMA2",
-    "version": "2.2.4",
+    "version": "2.2.5",
     "orientation": "portrait",
     "icon": "./assets/images/EMADragonLogo.png",
     "userInterfaceStyle": "automatic",
@@ -17,12 +17,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "buildNumber": "4",
+      "buildNumber": "5",
       "supportsTablet": true,
       "bundleIdentifier": "com.myoung9300.emaapp2"
     },
     "android": {
-      "versionCode": 24,
+      "versionCode": 25,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/EMADragonLogo.png",
         "backgroundColor": "#FFFFFF"
