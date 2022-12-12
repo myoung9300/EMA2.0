@@ -1,19 +1,10 @@
 import React from "react";
-import { View, ActivityIndicator } from "react-native";
-// import PdfReader from "rn-pdf-reader-js";
+
+import Pdf from "../Pdf";
 
 const Level1Manual = ({ navigation }) => {
-  return (
-    <View style={{ flex: 1 }}>
-      {/* <PdfReader
-        source={{
-          uri: "https://ema-planner.herokuapp.com/Level_1_Manual.pdf",
-        }}
-        startInLoadingState={true}
-        renderLoading={() => <ActivityIndicator color="black" size="large" />}
-      /> */}
-    </View>
-  );
+  const uri = "Level_1_Manual";
+  return <Pdf uri={uri} />;
 };
 
 export default Level1Manual;
