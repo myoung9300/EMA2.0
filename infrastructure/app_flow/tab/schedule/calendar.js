@@ -1,9 +1,8 @@
 import React from "react";
-
 import Pdf from "../../../../components/Pdf";
 
 const CalendarScreen = () => {
-  const uri = "Calendar";
+  const uri = "calendar";
   return <Pdf uri={uri} />;
 };
 
