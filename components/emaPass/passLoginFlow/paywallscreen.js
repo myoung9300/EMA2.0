@@ -8,21 +8,21 @@ import styles from "../styles";
 const PaywallScreen = ({ navigation }) => {
   const [packages, setPackages] = useState([]);
   const [isPurchasing, setIsPurchasing] = useState(false);
+  const getPackages = async () => {
+    try {
+      const offerings = await Purchases.getOfferings();
+      if (
+        offerings.current !== null &&
+        offerings.current.availablePackages.length !== 0
+      ) {
+        setPackages(offerings.current.availablePackages);
+      }
+    } catch (e) {
+      Alert.alert("Error getting offers", e.message);
+    }
+  };
 
   useEffect(() => {
-    const getPackages = async () => {
-      try {
-        const offerings = await Purchases.getOfferings();
-        if (
-          offerings.current !== null &&
-          offerings.current.availablePackages.length !== 0
-        ) {
-          setPackages(offerings.current.availablePackages);
-        }
-      } catch (e) {
-        Alert.alert("Error getting offers", e.message);
-      }
-    };
     getPackages();
   }, []);
 

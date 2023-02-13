@@ -1,27 +1,11 @@
-import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, Alert } from "react-native";
+import React from "react";
+import { Text, TouchableOpacity } from "react-native";
 import Purchases from "react-native-purchases";
 import styles from "../styles";
 
-const RestorePurchasesButton = () => {
-  const navigation = useNavigation();
+const RestorePurchasesButton = ({ navigation }) => {
   const restorePurchases = async () => {
-    try {
-      const restore = async () => await Purchases.restorePurchases();
-      // ... check restored purchaserInfo to see if entitlement is now active
-      if (restore() === "undefined") {
-        return null;
-      } else {
-        Alert.alert(
-          "CONGRATS!!",
-          "You are all set. Click on the 'EMA Pass' button to see all of the content."
-        );
-        navigation.navigate("Home Page");
-      }
-    } catch (e) {
-      Alert.alert("Error getting offers", e.message);
-    }
+    await Purchases.restorePurchases();
   };
 
   return (

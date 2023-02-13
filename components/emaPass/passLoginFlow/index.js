@@ -40,6 +40,9 @@ const PassNavigator = () => {
   };
   useEffect(() => {
     checkMember();
+    Purchases.addCustomerInfoUpdateListener((info) => {
+      checkMember();
+    });
   }, []);
   return (
     <Pass.Navigator

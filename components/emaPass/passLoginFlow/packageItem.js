@@ -6,18 +6,11 @@ import styles from "../styles";
 export const ENTITLEMENT_ID = "pass";
 
 const PackageItem = ({ data, setIsPurchasing }) => {
-  const onSelection = async () => {
+  const onSelection = async (data) => {
     setIsPurchasing(true);
     try {
       const { customerInfo } = await Purchases.purchasePackage(data);
-      if (
-        typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
-      ) {
-        // this is where a user gets lead to the EMA Pass screen...
-        Alert.alert(
-          "CONGRATS!!",
-          "Click the Home button and then click the EMA Pass button again and you will be redirected..."
-        );
+      if (typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== null) {
       }
     } catch (e) {
       if (e.PurchaseCancelledError) {
