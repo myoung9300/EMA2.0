@@ -21,7 +21,7 @@ import LoginFlow from "./infrastructure/login_flow/LoginFlow";
 
 export default function App() {
   const APPLE_API_KEY = "appl_nKoGMTbJvrBnTdTNaFLeGJiDnYT";
-  const GOOGLE_API_KEY = "goog_cMxoEZqXjUuLSyIsuzkrgFDUXkI";
+  const GOOGLE_API_KEY = "goog_TSacEIjhJwIxuJSMitxdvWmWYAH";
   registerNNPushToken(2348, "hqEMgzJMPWeyd0tRiFUUPl");
   let pushDataObject = getPushDataObject("");
 
