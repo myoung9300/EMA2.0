@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import Purchases from "react-native-purchases";
 import styles from "./styles";
 
 const EmaPassHome = ({ navigation }) => {
@@ -29,6 +30,12 @@ const EmaPassHome = ({ navigation }) => {
           onPress={() => navigation.navigate("Month 2 Breakdowns")}
         >
           <Text style={styles.headText}>Month 2 Breakdowns</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.Button, { marginHorizontal: 60 }]}
+          onPress={() => navigation.navigate("User Information")}
+        >
+          <Text style={styles.headText}>Get Status...</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -9,6 +9,7 @@ import KarateHomeWork from "../../../components/allStudents/KarateHomeworkCard";
 import Notifications from "../../../components/allStudents/Notifications/Notifications";
 
 import PassNavigator from "../../../components/emaPass/passLoginFlow/index";
+import paywallscreen from "../../../components/emaPass/passLoginFlow/paywallscreen";
 
 import PrivacyPolicy from "../../login_flow/SignUpScreen/PrivacyPolicy";
 import TermsOfUse from "../../login_flow/SignUpScreen/TermsOfUse";
@@ -73,6 +74,16 @@ const StackNavigation = () => {
         name="EMA Pass Navigator"
         options={{ headerShown: false }}
         component={PassNavigator}
+      />
+      <HomeStack.Screen
+        name="Paywall Screen"
+        options={{
+          headerBackVisible: false,
+          headerStyle: {
+            backgroundColor: "#79B779",
+          },
+        }}
+        component={paywallscreen}
       />
       <HomeStack.Screen name="Privacy Policy" component={PrivacyPolicy} />
       <HomeStack.Screen name="Terms of Use" component={TermsOfUse} />

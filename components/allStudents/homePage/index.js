@@ -12,11 +12,30 @@ import { Auth } from "aws-amplify";
 import styles from "../../../infrastructure/app_flow/stack/styles";
 
 import EMABlue from "../../../assets/images/EMABlue.png";
+import { ENTITLEMENT_ID } from "../../emaPass/passLoginFlow/packageItem";
+import Purchases from "react-native-purchases";
 
 const HomePage = ({ navigation }) => {
   const signOut = () => {
     Auth.signOut();
   };
+
+  const checkrcUser = async () => {
+    try {
+      const customerInfo = await Purchases.getCustomerInfo();
+      // access latest customerInfo
+      if (
+        typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
+      ) {
+        navigation.navigate("EMA Pass Navigator");
+      } else {
+        navigation.navigate("Paywall Screen");
+      }
+    } catch (e) {
+      // Error fetching customer info
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.image} source={EMABlue} />
@@ -39,9 +58,7 @@ const HomePage = ({ navigation }) => {
             APP Notifications
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("EMA Pass Navigator")}
-        >
+        <TouchableOpacity onPress={checkrcUser}>
           <Text style={styles.area}>EMA Pass</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Basic")}>
