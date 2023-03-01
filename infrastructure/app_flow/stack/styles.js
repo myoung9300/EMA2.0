@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     fontFamily: "PatrickHandSC_400Regular",
     textAlign: "center",
     color: "white",
-    fontSize: 23,
+    fontSize: 20,
   },
   area: {
     padding: 30,

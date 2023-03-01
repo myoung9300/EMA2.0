@@ -7,7 +7,6 @@ import {
   Image,
   View,
 } from "react-native";
-import { Auth } from "aws-amplify";
 
 import styles from "../../../infrastructure/app_flow/stack/styles";
 
@@ -16,10 +15,6 @@ import { ENTITLEMENT_ID } from "../../emaPass/passLoginFlow/packageItem";
 import Purchases from "react-native-purchases";
 
 const HomePage = ({ navigation }) => {
-  const signOut = () => {
-    Auth.signOut();
-  };
-
   const checkrcUser = async () => {
     try {
       const customerInfo = await Purchases.getCustomerInfo();
@@ -39,9 +34,9 @@ const HomePage = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.image} source={EMABlue} />
-      <View style={{ marginTop: 10, marginHorizontal: 130 }}>
-        <TouchableOpacity onPress={signOut}>
-          <Text style={styles.signOut}>Sign Out</Text>
+      <View style={{ marginTop: 10, marginHorizontal: 90 }}>
+        <TouchableOpacity onPress={() => navigation.navigate("Log Out")}>
+          <Text style={styles.signOut}>Account Information</Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.text}>

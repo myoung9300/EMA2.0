@@ -24,7 +24,7 @@ const LogInForm = ({ onLogin }) => {
   return (
     <>
       <Text style={styles.subHeadText}>
-        We want to identify you. Please tell us who this is for?
+        We want to know who you are. Please tell us who this is for?
       </Text>
       <TextInput
         value={newUserId}

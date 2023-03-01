@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomePage from "../../../components/allStudents/homePage/index";
+import LogOut from "../../login_flow/LogOut/LogOut";
 
 import BeltTesting from "../../../components/allStudents/BeltTesting";
 import Itp from "../../../components/allStudents/IntentToPromote";
@@ -61,6 +62,7 @@ const StackNavigation = () => {
         options={{ headerShown: false }}
         component={HomePage}
       />
+      <HomeStack.Screen name="Log Out" component={LogOut} />
 
       <HomeStack.Screen name="Testing" component={BeltTesting} />
       <HomeStack.Screen name="Intent-To-Promote" component={Itp} />

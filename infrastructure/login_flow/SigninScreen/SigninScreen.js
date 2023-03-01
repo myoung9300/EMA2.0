@@ -17,6 +17,7 @@ import EMABlue from "../../../assets/images/EMABlue.png";
 import { styles } from "../inf_styles";
 import CustomInput from "../SigninScreen/Custominput";
 import CustomButton from "../SigninScreen/CustomButton";
+import EmailButton from "./EmailButton";
 
 const SignInScreen = ({ navigation }) => {
   const { height } = useWindowDimensions();
@@ -57,10 +58,9 @@ const SignInScreen = ({ navigation }) => {
         <View style={styles.break} />
         <Image style={styles.logo} source={EMABlue} />
         <View style={styles.break} />
-        <Text style={styles.text_bold}>
-          Did you forget your username? Or, do you need to delete your username,
-          see someone at the front counter when you are in next to recover it...
-        </Text>
+        <Text style={styles.text_bold}>Did you forget your username?</Text>
+        <EmailButton />
+
         <View style={styles.break} />
         <CustomInput
           name="username"
