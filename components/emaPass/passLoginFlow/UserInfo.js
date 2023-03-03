@@ -4,7 +4,6 @@ import Purchases from "react-native-purchases";
 
 import LogInForm from "./LogInForm";
 import { ENTITLEMENT_ID } from "./packageItem";
-import RestorePurchasesButton from "./restorePurch";
 import LogoutButton from "./LogoutButton";
 import styles from "../styles";
 
@@ -40,9 +39,10 @@ const UserInfo = ({ onLogin }) => {
   return (
     <SafeAreaView style={styles.container}>
       {/* The user's current app user ID and subscription status */}
+      <View style={styles.break} />
       <Text style={styles.headText}>Current User Identifier</Text>
       <Text style={styles.bodyText}>{userId}</Text>
-
+      <View style={styles.break} />
       <Text style={styles.headText}>Subscription Status</Text>
       <Text
         style={[
@@ -52,7 +52,7 @@ const UserInfo = ({ onLogin }) => {
       >
         {subscriptionActive ? "Active" : "Not Active"}
       </Text>
-
+      <View style={styles.break} />
       {/* Authentication UI */}
       {isAnonymous ? (
         <LogInForm onLogin={getUserDetails} />

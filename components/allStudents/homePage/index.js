@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   SafeAreaView,
   Text,
@@ -30,6 +30,11 @@ const HomePage = ({ navigation }) => {
       // Error fetching customer info
     }
   };
+  useEffect(() => {
+    Purchases.addCustomerInfoUpdateListener((info) => {
+      checkrcUser();
+    });
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>

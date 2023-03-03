@@ -1,7 +1,7 @@
 import React, { useEffect, useState, memo } from "react";
 import { View, Text, FlatList, Alert, SafeAreaView } from "react-native";
 import Purchases from "react-native-purchases";
-import PackageItem from "./packageItem";
+import PackageItem, { ENTITLEMENT_ID } from "./packageItem";
 import RestorePurchasesButton from "./restorePurch";
 import styles from "../styles";
 import { ActivityIndicator } from "react-native-paper";
@@ -25,8 +25,25 @@ const PaywallScreen = ({ navigation }) => {
     }
   };
 
+  const checkUserMembership = async () => {
+    try {
+      const customerInfo = await Purchases.getCustomerInfo();
+      if (
+        typeof customerInfo.entitlements.active[ENTITLEMENT_ID] !== "undefined"
+      ) {
+        navigation.navigate("EMA Pass Navigator");
+      }
+    } catch (e) {
+      Alert.alert("Somthing is wrong", e.message);
+    }
+  };
+
   useEffect(() => {
     getPackages();
+    checkUserMembership();
+    Purchases.addCustomerInfoUpdateListener((info) => {
+      checkUserMembership();
+    });
   }, []);
 
   const header = () => <Text style={styles.headText}>Exclusive Pass!</Text>;
