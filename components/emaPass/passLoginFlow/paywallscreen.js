@@ -92,8 +92,24 @@ const PaywallScreen = ({ navigation }) => {
           * You may manage your subscription and/or turn off auto-renewal by
           visiting your Play Store account settings after purchase.
         </Text>
+        <View style={styles.break} />
+        <Text style={styles.subHeadText}>Privacy Policy / Terms of Use</Text>
+        <Text style={styles.bodyText}>
+          * Click <Text onPress={PrivacyPolicy}>HERE</Text> to see our Privacy
+          Policy.
+        </Text>
+        <Text style={styles.bodyText}>
+          * Click <Text onPress={TermsOfUse}>HERE</Text> to see our Terms of
+          Use.
+        </Text>
       </>
     );
+  };
+  const TermsOfUse = () => {
+    navigation.navigate("Terms of Use");
+  };
+  const PrivacyPolicy = () => {
+    navigation.navigate("Privacy Policy");
   };
 
   return (
